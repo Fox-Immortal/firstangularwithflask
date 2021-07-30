@@ -1,0 +1,43 @@
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+#BrowserScreen {
+    background-color : #bfd6e8;
+    height: 100%;
+    width: 100%;
+    padding: 1%;
+}
+
+#MainScreen {
+    background-color: white;
+    border-radius: 97px;
+    height: 100%;
+    width: 100%;
+}
+
+#LoginLogo {  
+    position: relative;
+    width: 100%;
+    padding: 5%;
+    margin-top: 20%;
+}
+
+#BackgroundLogo {
+    float:left;
+    background-color : #CCE4FD;
+    height: 100%;
+    width: 50%;
+    border-top-left-radius: 97px;
+    border-bottom-left-radius: 97px;
+}
+
+#LoginForm {
+    float: right;
+    /* background-color : #df9f29; */
+    height: 100%;
+    width: 50%;
+    border-top-right-radius: 97px;
+    border-bottom-right-radius: 97px;
+}
