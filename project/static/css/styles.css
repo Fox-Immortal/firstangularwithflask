@@ -18,80 +18,12 @@ html {
   width: 100%;
 }
 
-#LoginLogo {
-  position: relative;
-  width: 100%;
-  padding: 5%;
-  margin-top: 20%;
-}
-
-#BackgroundLogo {
-  float: left;
-  background-color: #cce4fd;
-  height: 100%;
-  width: 50%;
-  border-top-left-radius: 97px;
-  border-bottom-left-radius: 97px;
-}
-
-#LoginForm {
-  float: right;
-  height: 100%;
-  width: 50%;
-  border-top-left-radius: 97px;
-  border-bottom-left-radius: 97px;
-}
-
-@media (max-width: 1000px) {
-  #BackgroundLogo {
-    width: 100%;
-    height: 50%;
-    border-top-left-radius: 97px;
-    border-top-right-radius: 97px;
-    border-bottom-left-radius: 0px;
-  }
-  #LoginLogo {
-    position: relative;
-    width: 100%;
-    padding: 5%;
-    margin-top: 5%;
-  }
-  #LoginForm {
-    width: 100%;
-    height: 50%;
-  }
-  div.LoginForm > * {
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 97px;
-    border-bottom-left-radius: 97px;
-  }
-  .container-login100::before {
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 97px;
-    border-bottom-left-radius: 97px;
-  }
-  .wrap-login100 {
-    position: absolute;
-  }
-}
-
-@media (max-width: 563px) {
-  .wrap-login100 {
-    margin-top: 20%;
-  }
-  #LoginLogo {
-    margin-top: 25%;
-  }
-}
-
-@media (max-width: 417px) {
-  #LoginLogo {
-    margin-top: 35%;
-  }
-}
-
-
 /*---------------page2---------------------*/
+
+#logo {
+  margin-left: 3%;
+  margin-top: 1%;
+}
 
 #searchbar {
   background-color: #cce4fd;
@@ -106,26 +38,46 @@ html {
   text-align: center;
 }
 
+#bell {
+  position: absolute;
+  margin-top: 1%;
+  /* margin-left: 1.5%; */
+  float: right;
+  background: red;
+}
+
 #Personalprofile {
   float: left;
   background-color: #a6cbf3;
-  height: 85%;
+  height: 100%;
   width: 35%;
-  padding: 50px;
-  border-radius: 97px;
-  margin-left: 40px;
-  margin-top: 1%;
-  text-align: left;
+  /* border-radius: 97px; */
+  /* margin-left: 40px; */
+  /* text-align: left; */
+}
+
+#PersonalprofileHead {
+  text-align: center;
+  color: rgb(3, 18, 22);
+  font-size: 30px;
+  text-decoration-style: solid;
+  font-family: Trebuchet MS, Helvetica, sans-serif;
 }
 
 #Collegeprofile {
-  float: right;
-  height: 85%;
-  width: 59%;
-  padding: 50px;
-  margin-top: 1%;
-  border-radius: 97px;
-  background-color: #a6cbf3;
-  margin-right: 40px;
-  text-align: left;
+  float: left;
+  background-color: #d561f1;
+  height: 100%;
+  width: 60%;
+  /* border-radius: 97px; */
+  /* margin-right: 40px; */
+  /* text-align: left; */
+}
+
+#CollegeprofileHead {
+  text-align: center;
+  color: rgb(3, 18, 22);
+  font-size: 30px;
+  text-decoration-style: solid;
+  font-family: Trebuchet MS, Helvetica, sans-serif;
 }

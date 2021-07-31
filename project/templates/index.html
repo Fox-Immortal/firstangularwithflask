@@ -8,8 +8,7 @@
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        media="screen">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="static/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
     <link rel="stylesheet" type="text/css" href="static/css/animate.css">
@@ -18,19 +17,20 @@
     <link rel="stylesheet" type="text/css" href="static/css/util.css">
     <link rel="stylesheet" type="text/css" href="static/css/main.css">
     <link rel="stylesheet" href="static/css/styles.css" />
+    
+    <script type="text/javascript" src="static/node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.8/angular-css.min.js" integrity="sha512-IzQn5UXy3MAm+8+GNjk/muwKggpp5MnZQan3BFNP18Y4CHOmrg1WnOdmT5z5Crx1bv6AE2T0L7xmTnFnYeIYlA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="static/node_modules/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="static/js/app.js"></script>
+    <script type="text/javascript" src="static/js/controllers.js"></script>
 </head>
 
 <body>
 
-    <script src="static/node_modules/angular/angular.min.js"></script>
-    <script src="static/node_modules/angular-route/angular-route.min.js"></script>
-    <script src="static/js/app.js"></script>
-    <script src="static/js/controllers.js"></script>
     <div id="BrowserScreen">
-        <div id="MainScreen">
-            <!-- <div ng-view></div> -->
+        <div ng-view id="MainScreen">
 
-<img src="static/assessts/stdlink.png" alt="logo" width="200" style="margin-left: 3%; margin-top: 1%;">
+            <!-- <img id="logo" src="static/assessts/stdlink.png" alt="logo" width="200">
 
 
 
@@ -39,33 +39,29 @@
 
             <input id="searchbar" name="q" type="text" placeholder="Search…">
 
-            <img src="static/assessts/bell.png" alt="logo" width="85" style="margin-left: 0.5%;">
+            <img id="bell" src="static/assessts/bell.png" alt="logo" width="85">
 
-
+            
+            <div style="background-color: black; width: 100%; height: 3px; position: relative;"></div>
             <div id="Personalprofile">
                 <p>
-                <p style="text-align: center; color: rgb(3, 18, 22); font-size: 30px; text-decoration-style: solid ; font-family: Trebuchet MS, Helvetica, sans-serif	
-    ;">Personal profile</p>
-                <ul>
-                    <li>Name:</li>
-                    <li>Age:</li>
-                    <li>Major:</li>
-                    <li> StudentID:</li>
-                </ul>
+                    <p id="PersonalprofileHead">Personal profile</p>
+                    <ul>
+                        <li>Name:</li>
+                        <li>Age:</li>
+                        <li>Major:</li>
+                        <li>StudentID:</li>
+                    </ul>
                 </p>
-
             </div>
             <div id="Collegeprofile">
-                <p
-                    style="text-align: center; color: rgb(3, 18, 22); font-size: 30px; text-decoration-style: solid ;  font-family: Trebuchet MS, Helvetica, sans-serif	 ">
-                    College profile</p>
-
+                <p id="CollegeprofileHead">College profile</p>
             </div>
-
-
-
+            <div style="background-color: black; width: 100%; height: 3px; position: relative;"></div>
+            
+            
         </div>
-    </div>
+    </div> -->
 </body>
 
 </html>
