@@ -41,3 +41,10 @@ body, html {
     border-top-right-radius: 97px;
     border-bottom-right-radius: 97px;
 }
+
+
+@media (max-width: 500px) {
+    #LoginLogo {  
+        background-color: yellow;
+    }
+}
