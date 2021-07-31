@@ -19,8 +19,8 @@
     <script src="static/node_modules/angular-route/angular-route.min.js"></script>
     <script src="static/js/app.js"></script>
     <script src="static/js/controllers.js"></script>
-    <div ng-view></div>
-    <!-- <div id="BrowserScreen">
+    <!-- <div ng-view></div> -->
+    <div id="BrowserScreen">
         <div id="MainScreen">
             <div id="BackgroundLogo">
                 <img id="LoginLogo" src="static/assessts/stdlink.png">
@@ -29,7 +29,8 @@
                 <div class="limiter">
                     <div class="container-login100">
                         <div class="wrap-login100 p-t-190 p-b-30">
-                            <form class="login100-form validate-form" ng-controller="loginController" ng-submit="login()">
+                            <!-- ng-controller="loginController" -->
+                            <form class="login100-form validate-form"  ng-submit="login()">
                                 <div ng-show="error" class="alert alert-danger" style="border-radius: 97px"> {{errorMessage}} </div>
                                 <div class="wrap-input100 validate-input m-b-10" data-validate="Username is required" >
                                     <input class="input100" type="text" name="email" placeholder="Username" ng-model="loginForm.email">
@@ -64,7 +65,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 </body>
 
 </html>
