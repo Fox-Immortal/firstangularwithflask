@@ -92,3 +92,22 @@ body, html {
         margin-top: 35%;
     }
 }
+
+
+
+  #searchbar
+  { color: rgb(19, 19, 223);
+    width:45%;
+    margin-top: 3%;
+    float: right;
+    position: relative;
+    margin-left: 60px;
+    text-align: left;
+    
+  }
+
+  input 
+  { background-color: rgb(221, 213, 230);
+
+
+  }
