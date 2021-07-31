@@ -98,3 +98,35 @@ html {
   width: 55%;
   text-align: center;
 }
+
+#Personalprofile
+{  float: left;
+    background-color: #a6cbf3;
+    height: 78%;
+    width: 35%;
+    padding: 2%;
+    border-radius: 97px;
+    margin-left:40px;
+    text-align: left;
+    text-size-adjust: 23px ;
+     
+
+}
+
+#Collegeprofile
+{
+    float: right;
+    height: 78%;
+    width: 59%;
+    padding: 2%;
+    border-radius: 97px;
+    background-color: #cdc9f3;
+    margin-right:40px;
+    text-align: left;
+    text-size-adjust: 23px ;
+  
+  }
+
+
+
+}
