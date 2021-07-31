@@ -90,12 +90,15 @@ html {
   }
 }
 
+
+/*---------------page2---------------------*/
+
 #searchbar {
   background-color: #cce4fd;
-  margin-left: 15%;
+  margin-left: 6.5%;
   height: 50px;
   border-radius: 97px;
-  width: 50%;
+  width: 60%;
   text-align: center;
 }
 
@@ -129,4 +132,3 @@ html {
 
 
 
-}
