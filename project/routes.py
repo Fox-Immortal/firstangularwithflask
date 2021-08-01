@@ -3,6 +3,7 @@ from project import app
 from project.models import User, Admin_User
 
 # I'll make 2 routes for the login page or it might be the first one
+# why
 
 @app.route("/")
 @app.route("/login")
