@@ -6,11 +6,11 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
   .when('/', {
     templateUrl: 'static/partials/login.html',
     controller: 'loginController',
-    css: 'static/css/login.css'
+    css: 'static/css/login/login.css'
   })
   .when('/main', {
     templateUrl: 'static/partials/main.html',
-    controller: 'loginController',
+    // controller: 'loginController',
     // css: 'static/css/test.css'
   })
   .when('/hello', {
@@ -19,8 +19,10 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
   .otherwise({
     redirectTo: '/'
   });
-  $locationProvider.html5Mode({
-    enabled: true,
-    requireBase: false
-  });
+  // $locationProvider.html5Mode({
+  //   enabled: true,
+  //   requireBase: false,
+  //   rewriteLinks: false
+
+  // });
 }]);
