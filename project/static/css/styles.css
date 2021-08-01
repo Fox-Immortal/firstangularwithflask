@@ -48,7 +48,7 @@ html {
 
 #bell {
   float: right;
-  background: red;
+  margin-right: 1%;
 }
 
 #Personalprofile {
@@ -70,6 +70,14 @@ html {
   font-family: Trebuchet MS, Helvetica, sans-serif;
 }
 
+#personalExpand {
+  position: absolute;
+}
+#personalExpand:hover {
+  width: 80px;
+}
+
+
 #Collegeprofile {
   float: right;
   background-color: #CCE4FD;
@@ -87,4 +95,11 @@ html {
   font-size: 30px;
   text-decoration-style: solid;
   font-family: Trebuchet MS, Helvetica, sans-serif;
+}
+
+#collegeExpand {
+  position: absolute;
+}
+#collegeExpand:hover {
+  width: 100px;
 }
