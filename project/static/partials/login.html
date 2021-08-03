@@ -37,14 +37,11 @@
                                 {{ form.password(class="form-control form-control-lg") }}
                             {% endif %}
                         </div>
-                        <div class="form-check">
-                            {{ form.remember(class="form-check-input") }}
-                            {{ form.remember.label(class="form-check-label") }}
-                        </div>
                     </fieldset>
 
                     <div class="container-login100-form-btn p-t-10">
                         <button class="login100-form-btn" >
+                            {{ form.submit(class="btn btn-outline-info") }}
                             Login
                         </button>
                     </div>
