@@ -20,9 +20,17 @@ html {
 
 /*---------------page2---------------------*/
 
+#nav-bar {
+  padding: 1%;
+}
+
 #logo {
   margin-left: 3%;
-  margin-top: 1%;
+}
+
+#profilePicture {
+  float: right;
+  margin-right: 3%;
 }
 
 #searchbar {
@@ -39,21 +47,19 @@ html {
 }
 
 #bell {
-  position: absolute;
-  margin-top: 1%;
-  /* margin-left: 1.5%; */
   float: right;
-  background: red;
+  margin-right: 1%;
 }
 
 #Personalprofile {
   float: left;
-  background-color: #a6cbf3;
-  height: 100%;
+  background-color: #CCE4FD;
+  height: 85%;
   width: 35%;
-  /* border-radius: 97px; */
-  /* margin-left: 40px; */
-  /* text-align: left; */
+  padding: 1%;
+  border-radius: 97px;
+  margin-left: 40px;
+  text-align: left;
 }
 
 #PersonalprofileHead {
@@ -64,14 +70,23 @@ html {
   font-family: Trebuchet MS, Helvetica, sans-serif;
 }
 
+#personalExpand {
+  position: absolute;
+}
+#personalExpand:hover {
+  width: 80px;
+}
+
+
 #Collegeprofile {
-  float: left;
-  background-color: #d561f1;
-  height: 100%;
-  width: 60%;
-  /* border-radius: 97px; */
-  /* margin-right: 40px; */
-  /* text-align: left; */
+  float: right;
+  background-color: #CCE4FD;
+  height: 85%;
+  width: 59%;
+  padding: 1%;
+  border-radius: 97px;
+  margin-right: 40px;
+  text-align: left;
 }
 
 #CollegeprofileHead {
@@ -80,4 +95,11 @@ html {
   font-size: 30px;
   text-decoration-style: solid;
   font-family: Trebuchet MS, Helvetica, sans-serif;
+}
+
+#collegeExpand {
+  position: absolute;
+}
+#collegeExpand:hover {
+  width: 100px;
 }
