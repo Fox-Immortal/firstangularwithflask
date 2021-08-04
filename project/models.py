@@ -32,10 +32,10 @@ user_put_args.add_argument("skills", type=int, help="Liked of the video", requir
 
 BASE = "http://127.0.0.1:5000/"
 
-user_update_args = reqparse.RequestParser()
-user_update_args.add_argument("name", type=str, help="Name of the video is required")
-user_update_args.add_argument("views", type=int, help="Views of the video")
-user_update_args.add_argument("likes", type=int, help="Liked of the video")
+# user_update_args = reqparse.RequestParser()
+# user_update_args.add_argument("name", type=str, help="Name of the video is required")
+# user_update_args.add_argument("views", type=int, help="Views of the video")
+# user_update_args.add_argument("likes", type=int, help="Liked of the video")
 
 
 class User_Club(db.Model, Resource):
