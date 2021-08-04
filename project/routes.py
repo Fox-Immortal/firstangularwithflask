@@ -2,12 +2,14 @@ from flask import render_template, flash, redirect, url_for
 from project import app, bcrypt
 # from flask_login import login_user, current_user, logout_user, login_required
 from project.models import User, Admin_User
-from project.forms import LoginForm
+from project.forms import LoginForm 
 
 # I'll make 2 routes for the login page or it might be the first one
 # why
 
 @app.route("/", methods=['GET', 'POST'])
+def default():
+    return render_template("index.html")
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     form = LoginForm()

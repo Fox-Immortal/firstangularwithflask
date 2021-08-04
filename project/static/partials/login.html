@@ -8,40 +8,23 @@
                 <!-- ng-controller="loginController" -->
                 <form class="login100-form validate-form"  ng-submit="login()">
                     <div ng-show="error" class="alert alert-danger" style="border-radius: 97px"> {{errorMessage}} </div>
-                    {{ form.hidden_tag() }}
-                    <fieldset class = "form-group">
-                        <legend class="border-bottom mb-4">Sign In</legend>
-                        <div class="form-group">
-                            {{ form.email.label(class="form-control-label") }}
-                            {% if form.email.errors %}
-                                {{ form.email(class="form-control form-control-lg is-invalid") }}
-                                <div class="invalid-feedback">
-                                    {% for errors in form.email.errors %}
-                                        <span>{{ error }}</span>
-                                    {% endfor %}
-                                </div>
-                            {% else %}
-                                {{ form.email(class="form-control form-control-lg") }}
-                            {% endif %}
-                        </div>
-                        <div class="form-group">
-                            {{ form.password.label(class="form-control-label") }}
-                            {% if form.password.errors %}
-                                {{ form.password(class="form-control form-control-lg is-invalid") }}
-                                <div class="invalid-feedback">
-                                    {% for errors in form.password.errors %}
-                                        <span>{{ error }}</span>
-                                    {% endfor %}
-                                </div>
-                            {% else %}
-                                {{ form.password(class="form-control form-control-lg") }}
-                            {% endif %}
-                        </div>
-                    </fieldset>
+                    <div class="wrap-input100 validate-input m-b-10" data-validate="Username is required" >
+                        <input class="input100" type="text" name="email" placeholder="Username" ng-model="loginForm.email">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-10" data-validate="Password is required">
+                        <input class="input100" type="password" name="password" placeholder="Password" ng-model="loginForm.password">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock"></i>
+                        </span>
+                    </div>
 
                     <div class="container-login100-form-btn p-t-10">
                         <button class="login100-form-btn" >
-                            {{ form.submit(class="btn btn-outline-info") }}
                             Login
                         </button>
                     </div>

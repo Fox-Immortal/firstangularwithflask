@@ -37,7 +37,6 @@ angular.module('myApp').factory('AuthService',
 
         // return promise object
         return deferred.promise;
-
       }
 
       function logout() {
