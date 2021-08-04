@@ -8,15 +8,13 @@ from project.forms import LoginForm
 # why
 
 @app.route("/", methods=['GET', 'POST'])
-def default():
-    return render_template("index.html")
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
-        if user and bcrypt.check_password_hash(user.password, form.password.data):
-        # if form.email.data == 'admin@demo.cc':
+        # if user and bcrypt.check_password_hash(user.password, form.password.data):
+        if form.email.data == 'admin@demo.cc':
             return redirect(url_for('main'))
         else :
             flash('Login Unsuccessful. Please check E-mail and password', 'danger')

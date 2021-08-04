@@ -1,6 +1,5 @@
 from datascience.tables import Table
 from project import db
-from sqlalchemy import *
 from flask_restful import Api, Resource, reqparse, abort, fields, marshal_with
 
 user_resource_fields = {
@@ -35,7 +34,18 @@ user_update_args.add_argument("name", type=str, help="Name of the video is requi
 user_update_args.add_argument("views", type=int, help="Views of the video")
 user_update_args.add_argument("likes", type=int, help="Liked of the video")
 
-User_Club = Table('User_Club', MetaData(), db.Column('id', db.Integer, primary_key=True), db.Column('user_id', db.Integer, db.ForeignKey('User.id')), db.Column('club_id', db.Integer, db.ForeignKey('Club.id')))
+# User_Club = Table('User_Club', MetaData(), 
+#     db.Column('id', db.Integer, primary_key=True),
+#     db.Column('user_id', db.Integer,db.ForeignKey('User.id')),
+#     db.Column('club_id', db.Integer,db.ForeignKey('Club.id')))
+# User_Club = Table('User_Club', MetaData())
+
+
+
+class User_Club(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    club_guy = db.Column(db.Integer, db.ForeignKey('user.id'))
+    club_skills = db.Column(db.Integer, db.ForeignKey('club.id'))
 
 class Skill(db.Model) :
     id = db.Column(db.Integer, primary_key=True)
@@ -48,7 +58,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(30), unique=True, nullable=False)
     skills = db.relationship('Skill', backref='skilled_guy', lazy=True)
-    clubs = db.relationship('User_Club', secondary=User_Club, backref='clubsOfMember')
+    clubs = db.relationship('User_Club', backref='clubsOfMember', lazy=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
     password = db.Column(db.String(30), nullable=False)
@@ -77,9 +87,8 @@ class Club(db.Model) :
     requiredSkills = db.relationship('Skill', backref='requiredSkillForTheClub', lazy=True)
     clubName = db.Column(db.String(120), unique=True, nullable=False)
     imageFile = db.Column(db.String(20), nullable=False, default='default.jpg')
-    members = db.relationship('User_Club', secondary=User_Club, backref='memberOfClub')
+    members = db.relationship('User_Club', backref='memberOfClub', lazy=True)
     description = db.Column(db.String(2000), unique=False, nullable=True)
     def __repr__(self):
         return f"Club('{self.clubName}', '{self.imageFile}')"
-
-
+    
