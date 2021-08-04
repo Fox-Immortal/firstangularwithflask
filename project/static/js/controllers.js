@@ -7,7 +7,7 @@ myApp.controller('loginController', ['$scope', '$location', function ($scope, $l
 
             // handle success
             // alert($scope.loginForm.email);
-            //     $location.path('/main');
+                $location.path('/main');
             //     $scope.disabled = false;
             //     $scope.loginForm = {};
 

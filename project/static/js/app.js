@@ -10,7 +10,7 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
   // })
   // .when('/main', {
   //   templateUrl: 'static/partials/main.html',
-  //   // controller: 'loginController',
+  //   // controller: 'mainController',
   //   // css: 'static/css/test.css'
   // })
   // .when('/hello', {

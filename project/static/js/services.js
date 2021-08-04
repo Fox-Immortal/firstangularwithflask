@@ -15,7 +15,6 @@ angular.module('myApp').factory('AuthService',
       }
 
       function login(email, password) {
-
         // create a new instance of deferred
         var deferred = $q.defer();
         loggedOut = false;
@@ -37,7 +36,6 @@ angular.module('myApp').factory('AuthService',
 
         // return promise object
         return deferred.promise;
-
       }
 
       function logout() {
