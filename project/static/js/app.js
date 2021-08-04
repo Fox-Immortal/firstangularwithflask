@@ -19,10 +19,10 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
   .otherwise({
     redirectTo: '/'
   });
-  // $locationProvider.html5Mode({
-  //   enabled: true,
-  //   requireBase: false,
-  //   rewriteLinks: false
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false,
+    rewriteLinks: false
 
-  // });
+  });
 }]);
