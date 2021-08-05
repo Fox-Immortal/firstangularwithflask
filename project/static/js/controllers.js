@@ -7,7 +7,7 @@ myApp.controller('loginController', ['$scope', '$location', function ($scope, $l
 
             // handle success
             // alert($scope.loginForm.email);
-                $location.path('/main');
+            $location.path('/main');
             //     $scope.disabled = false;
             //     $scope.loginForm = {};
 
@@ -18,4 +18,16 @@ myApp.controller('loginController', ['$scope', '$location', function ($scope, $l
             // $scope.disabled = false;
             // $scope.loginForm = {};
       }
+}]);
+
+myApp.controller('AppCtrl', ['$scope', '$interval', function ($scope, $interval) {
+      $scope.number = 0;
+      $interval(function () {
+            $scope.number++;
+      }, 1000);
+
+      var colors = ['red', 'blue', 'green', 'yellow', 'orange'];
+      $scope.colorClass = function (number) {
+            return colors[number % colors.length];
+      };
 }]);

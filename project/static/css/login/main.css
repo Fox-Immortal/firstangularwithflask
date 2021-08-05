@@ -7,17 +7,17 @@
 
 @font-face {
   font-family: Montserrat-Regular;
-  src: url('../fonts/montserrat/Montserrat-Regular.ttf'); 
+  src: url('/static/fonts/montserrat/Montserrat-Regular.ttf'); 
 }
 
 @font-face {
   font-family: Montserrat-ExtraBold;
-  src: url('../fonts/montserrat/Montserrat-ExtraBold.ttf'); 
+  src: url('/static/fonts/montserrat/Montserrat-ExtraBold.ttf'); 
 }
 
 @font-face {
   font-family: Montserrat-Bold;
-  src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
+  src: url('/static/fonts/montserrat/Montserrat-Bold.ttf'); 
 }
 
 
@@ -253,7 +253,7 @@ iframe {
   background: #fff;
   height: 50px;
   border-radius: 25px;
-  padding: 0 30px 0 53px;
+  padding: 30px 30px 10px 53px;
 }
 
 

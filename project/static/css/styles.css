@@ -11,7 +11,7 @@ html {
   padding: 1%;
 }
 
-#MainScreen {
+main {
   background-color: white;
   border-radius: 97px;
   height: 100%;
@@ -103,3 +103,7 @@ html {
 #collegeExpand:hover {
   width: 100px;
 }
+
+
+
+main.ng
