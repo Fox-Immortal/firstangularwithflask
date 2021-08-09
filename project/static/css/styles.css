@@ -2,13 +2,18 @@ body,
 html {
   height: 100%;
   width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 #BrowserScreen {
   background-color: #bfd6e8;
-  height: 100%;
-  width: 100%;
-  padding: 1%;
+  height: 98%;
+  width: 98%;
+  padding: 0.5%;
+  padding-left: 1%;
+  padding-right: 1%;
+  margin: 0;
 }
 
 main {
@@ -17,93 +22,3 @@ main {
   height: 100%;
   width: 100%;
 }
-
-/*---------------page2---------------------*/
-
-#nav-bar {
-  padding: 1%;
-}
-
-#logo {
-  margin-left: 3%;
-}
-
-#profilePicture {
-  float: right;
-  margin-right: 3%;
-}
-
-#searchbar {
-  background-color: #cce4fd;
-  margin-left: 6.5%;
-  height: 50px;
-  border-radius: 97px;
-  width: 60%;
-  margin-left: 4.5%;
-  height: 50px;
-  border-radius: 97px;
-  width: 65%;
-  text-align: center;
-}
-
-#bell {
-  float: right;
-  margin-right: 1%;
-}
-
-#Personalprofile {
-  float: left;
-  background-color: #CCE4FD;
-  height: 85%;
-  width: 35%;
-  padding: 1%;
-  border-radius: 97px;
-  margin-left: 40px;
-  text-align: left;
-}
-
-#PersonalprofileHead {
-  text-align: center;
-  color: rgb(3, 18, 22);
-  font-size: 30px;
-  text-decoration-style: solid;
-  font-family: Trebuchet MS, Helvetica, sans-serif;
-}
-
-#personalExpand {
-  position: absolute;
-}
-#personalExpand:hover {
-  width: 80px;
-}
-
-
-#Collegeprofile {
-  float: right;
-  background-color: #CCE4FD;
-  height: 85%;
-  width: 59%;
-  padding: 1%;
-  border-radius: 97px;
-  margin-right: 40px;
-  text-align: left;
-}
-
-#CollegeprofileHead {
-  text-align: center;
-  color: rgb(3, 18, 22);
-  font-size: 30px;
-  text-decoration-style: solid;
-  font-family: Trebuchet MS, Helvetica, sans-serif;
-}
-
-#collegeExpand {
-  position: absolute;
-}
-#collegeExpand:hover {
-  width: 100px;
-}
-
-
-
-main.ng

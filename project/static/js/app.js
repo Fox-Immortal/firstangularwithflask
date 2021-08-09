@@ -6,12 +6,12 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
     .when('/', {
       templateUrl: 'static/partials/login.html',
       controller: 'loginController',
-      css: 'static/css/login/login.css'
+      css: '/static/css/login.css'
     })
     .when('/main', {
       templateUrl: 'static/partials/main.html',
-      // controller: 'loginController',
-      // css: 'static/css/test.css'
+      controller: 'mainController',
+      css: '/static/css/main.css'
     })
     .when('/hello', {
       templateUrl: 'static/partials/hi.html'
