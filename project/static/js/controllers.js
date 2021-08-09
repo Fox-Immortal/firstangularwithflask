@@ -16,7 +16,6 @@ myApp.controller('loginController', ['$scope', '$location', function ($scope, $l
                   $scope.error = true;
                   $scope.errorMessage = "Please don't leave any field empty!";
                   $scope.disabled = false;
-                  alert($scope.loginForm);
                   $scope.loginForm = {};
             }
             else if($scope.loginForm.email == 'fox' || $scope.loginForm.email == 'fuad') {
