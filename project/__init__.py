@@ -14,6 +14,7 @@ app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
 app.config['MAIL_USERNAME'] = 'Student-Link@outlook.com'
 app.config['MAIL_PASSWORD'] = 'StudentLink2021'
+
 db = SQLAlchemy(app)
 api = Api(app)
 mail = Mail(app)
