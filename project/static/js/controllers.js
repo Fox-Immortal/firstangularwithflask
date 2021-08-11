@@ -4,19 +4,16 @@ myApp.controller('loginController', ['$scope', '$location', function ($scope, $l
             // initial values
             $scope.error = false;
             $scope.disabled = true;
-            // TODO: make an error message for empty feilds
             // TODO: Link it with the api using Auth when done
             // handle success
             // alert($scope.loginForm.email);
             //     $scope.disabled = false;
             //     $scope.loginForm = {};
             
-            // handle error
-            if($scope.loginForm == undefined) {
+            
+            if($scope.loginForm.email == undefined) {
                   $scope.error = true;
                   $scope.errorMessage = "Please don't leave any field empty!";
-                  $scope.disabled = false;
-                  $scope.loginForm = {};
             }
             else if($scope.loginForm.email == 'fox' || $scope.loginForm.email == 'fuad') {
                   $location.path('/main');
@@ -24,9 +21,9 @@ myApp.controller('loginController', ['$scope', '$location', function ($scope, $l
             else {
                   $scope.error = true;
                   $scope.errorMessage = "Invalid username and/or password";
-                  $scope.disabled = false;
-                  $scope.loginForm = {};
             }
+            $scope.disabled = false;
+            $scope.loginForm = {};
       }
 }]);
 

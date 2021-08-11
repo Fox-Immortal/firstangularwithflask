@@ -1,12 +1,12 @@
 <base href="" />
 <div id="BackgroundLogo">
-    <img id="LoginLogo" src="static/assessts/stdlink.png">
+    <img id="LoginLogo" src="static/assets/stdlink.png">
 </div>
 <div class="formBackground" ng-controller="loginController" ng-submit="login()" ng-model="loginForm">
     <form class="box" method="post">
         <div ng-show="error" class="error"> {{errorMessage}} </div>
         <input type="text" name="" placeholder="Username" ng-model="loginForm.email">
-        <input type="text" name="" placeholder="Password" ng-model="loginForm.password">
+        <input type="password" name="" placeholder="Password" ng-model="loginForm.password">
         <input type="submit" name="" value="Login">
     </form>
 </div>

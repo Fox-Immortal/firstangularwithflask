@@ -7,8 +7,6 @@
   border-bottom-left-radius: 97px;
 }
 
-
-
 #LoginLogo {
   position: relative;
   width: 90%;
@@ -46,13 +44,13 @@
 }
 
 /* ---------------------- */
-
+/* FIXME: please fix this for mobile  */
 .formBackground {
   height: 100%;
   width: 50%;
   text-align: center;
   float: right;
-}
+} 
 .box {
   margin-top: 35%;
 }
@@ -71,6 +69,7 @@
   transition: 0.5s;
   background-color: #dbedff;
 }
+
 .error {
   background-color: #ff8282;
   border: 2px solid #eb2222;

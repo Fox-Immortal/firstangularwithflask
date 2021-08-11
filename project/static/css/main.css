@@ -14,17 +14,22 @@
   
   #searchbar {
     background-color: #cce4fd;
-    margin-left: 6.5%;
     height: 50px;
-    border-radius: 97px;
     width: 60%;
     margin-left: 4.5%;
-    height: 50px;
+    border: 0;
     border-radius: 97px;
-    width: 65%;
     text-align: center;
+    transition: 0.5s;
+    outline: none;
+
   }
   
+  #searchbar:focus {
+    background-color: #e9f4ff;
+    border: 2px solid #cce4fd;
+  }
+
   #bell {
     float: right;
     margin-right: 1%;
@@ -49,8 +54,9 @@
     font-family: Trebuchet MS, Helvetica, sans-serif;
   }
   
-  #personalExpand {
+  #personalExpand, #collegeExpand {
     position: absolute;
+    transition: 0.25s;
   }
   #personalExpand:hover {
     width: 80px;
@@ -75,10 +81,7 @@
     text-decoration-style: solid;
     font-family: Trebuchet MS, Helvetica, sans-serif;
   }
-  
-  #collegeExpand {
-    position: absolute;
-  }
+
   #collegeExpand:hover {
     width: 100px;
   }
