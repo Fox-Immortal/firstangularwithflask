@@ -7,16 +7,14 @@ from flask_restful import Api, Resource, reqparse, abort, fields, marshal_with
 from project.forms import *
 from flask_mail import Message
 
-#every route should be added here so the server know how to handle these urls 
-
 
 
 BASE = "127.0.0.1/5000"
+
 @app.route("/main")
 @app.route("/", methods=['GET', 'POST'])
 def home():
     return render_template("index.html")
-
 
 
 @app.route("/api/login", methods=['POST'])
