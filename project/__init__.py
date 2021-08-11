@@ -89,11 +89,11 @@ class Search_Api_Skill(Resource):
 
 
 
-api.add_resource(User_Api, "/user/<int:user_id>")
-api.add_resource(Club_Api, "/club/<int:club_id>")
-api.add_resource(Search_Api_User, "/search/user/<string:name>")
-api.add_resource(Search_Api_Club, "/search/club/<string:name>")
-api.add_resource(Search_Api_Skill, "/search/skill/<string:name>")
+api.add_resource(User_Api, "/api/user/<int:user_id>")
+api.add_resource(Club_Api, "/api/club/<int:club_id>")
+api.add_resource(Search_Api_User, "/api/search/user/<string:name>")
+api.add_resource(Search_Api_Club, "/api/search/club/<string:name>")
+api.add_resource(Search_Api_Skill, "/api/search/skill/<string:name>")
 
 
 from project import routes
