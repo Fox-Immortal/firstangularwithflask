@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_restful import Api, Resource, reqparse, abort, fields, marshal_with
 from flask_mail import Mail
+from flask_login import LoginManager
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '2d4904a0818e55ebf6d4c38e8af9b56c'
@@ -18,6 +19,9 @@ db = SQLAlchemy(app)
 api = Api(app)
 mail = Mail(app)
 bcrypt = Bcrypt(app)
+login_manager = LoginManager(app)
+login_manager.login_view = 'login'
+login_manager.login_message_category = 'info'
 
 from project.models import *
 

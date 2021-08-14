@@ -1,9 +1,13 @@
 from datascience.tables import Table
-from project import db, api, app
+from project import db, login_manager, app, api
 import requests
 from flask_restful import Api, Resource, reqparse, abort, fields, marshal_with
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+from flask_login import UserMixin
 
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 class User_Club(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -17,7 +21,7 @@ class Skill(db.Model) :
     name = db.Column(db.String(30), nullable = False)
     percentage = db.Column(db.Integer)
 
-class User(db.Model):
+class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     phone_number = db.Column(db.String(15))
     name = db.Column(db.String(30), unique=True, nullable=False)
