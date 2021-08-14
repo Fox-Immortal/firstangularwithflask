@@ -15,14 +15,14 @@ myApp.factory('AuthService',
       }
 
       function login(email, password) {
-        alert("testing this out");
         // create a new instance of deferred
         var deferred = $q.defer();
         loggedOut = false;
         // send a post request to the server
-        $http.post('/api/login', { email: email, password: password })
+        $http.post('/api/login', { email: email, password: password})
           // handle success
           .then((response) => {
+            console.log(response.data);
             if (response.status === 200 && response.data.result) {
               user_in = true;
               deferred.resolve();
@@ -31,12 +31,13 @@ myApp.factory('AuthService',
               deferred.reject();
             }
           }, (response) => {
+            console.log(response.data);
             user_in = false;
             deferred.reject();
           });
 
         // return promise object
-        // return deferred.promise;
+        return deferred.promise;
       }
 
       function logout() {
@@ -58,15 +59,15 @@ myApp.factory('AuthService',
 
       }
 
-      function register(email, password) {
+      function register(email, password, name) {
 
         // create a new instance of deferred
         var deferred = $q.defer();
-
         // send a post request to the server
-        $http.post('/api/register', { email: email, password: password})
+        $http.post('/api/register', { email: email, password: password, name: name})
           .then((response) => {
-            if (response.status === 200 && response.data.result == true) {
+            if (response.status === 200 && response.data.result) {
+              console.log(response.data)
               deferred.resolve();
             }
           }, (response) => {

@@ -25,29 +25,27 @@ def login():
         session['logged_in'] = True
         status = True
     else :
-        flash('Login Unsuccessful. Please check E-mail and password', 'danger')
         status = False
     return jsonify({'result': status})
 
 @app.route('/api/register', methods=['GET', 'POST'])
 def register():
     json_data = request.json
-    print(json_data)
-    status = "false"
-    # user = User(
-    #     name=json_data['name'],
-    #     email=json_data['email'],
-    #     password=json_data['password']
-    # )
-    # search_for_similar = User.query.filter_by(email=user.email).first()
-    # if not search_for_similar:
-    #     user.password = bcrypt.generate_password_hash(user.password).decode('utf-8')
-    #     db.session.add(user)
-    #     db.session.commit()
-    #     db.session.close()
-    #     status = 'success'
-    # else :
-    #     status = 'this user is already registered'
+    user = User(
+        name=json_data['name'],
+        email=json_data['email'],
+        password=json_data['password']
+    )
+    search_for_similar = User.query.filter_by(email=user.email).first()
+    if not search_for_similar:
+        user.password = bcrypt.generate_password_hash(user.password).decode('utf-8')
+        db.session.add(user)
+        db.session.commit()
+        db.session.close()
+        status = 'success'
+    else :
+        status = 'this user is already registered'
+
     return jsonify({'result': status})
 
 @app.route('/api/logout')
