@@ -1,87 +1,86 @@
-/* FIXME: please fix this padding and margine and add animations for this  */
 #nav-bar {
-    padding: 1%;
-  }
-  
-  #logo {
-    margin-left: 3%;
-  }
-  
-  #profilePicture {
-    float: right;
-    margin-right: 3%;
-  }
-  
-  #searchbar {
-    background-color: #cce4fd;
-    height: 50px;
-    width: 60%;
-    margin-left: 4.5%;
-    border: 0;
-    border-radius: 97px;
-    text-align: center;
-    transition: 0.5s;
-    outline: none;
+  padding: 1%;
+}
 
-  }
-  
-  #searchbar:focus {
-    background-color: #e9f4ff;
-    border: 2px solid #cce4fd;
-  }
+#logo {
+  margin-left: 3%;
+}
 
-  #bell {
-    float: right;
-    margin-right: 1%;
-  }
-  
-  #Personalprofile {
-    float: left;
-    background-color: #CCE4FD;
-    height: 85%;
-    width: 35%;
-    padding: 1%;
-    border-radius: 97px;
-    margin-left: 40px;
-    text-align: left;
-  }
-  
-  #PersonalprofileHead {
-    text-align: center;
-    color: rgb(3, 18, 22);
-    font-size: 30px;
-    text-decoration-style: solid;
-    font-family: Trebuchet MS, Helvetica, sans-serif;
-  }
-  
-  #personalExpand, #collegeExpand {
-    position: absolute;
-    transition: 0.25s;
-  }
-  #personalExpand:hover {
-    width: 80px;
-  }
-  
-  
-  #Collegeprofile {
-    float: right;
-    background-color: #CCE4FD;
-    height: 85%;
-    width: 59%;
-    padding: 1%;
-    border-radius: 97px;
-    margin-right: 40px;
-    text-align: left;
-  }
-  
-  #CollegeprofileHead {
-    text-align: center;
-    color: rgb(3, 18, 22);
-    font-size: 30px;
-    text-decoration-style: solid;
-    font-family: Trebuchet MS, Helvetica, sans-serif;
-  }
+#profilePicture {
+  float: right;
+  margin-right: 3%;
+}
 
-  #collegeExpand:hover {
-    width: 100px;
-  }
+#searchbar {
+  background-color: #cce4fd;
+  height: 50px;
+  width: 60%;
+  margin-left: 4.5%;
+  border: 0;
+  border-radius: 97px;
+  text-align: center;
+  transition: 0.5s;
+  outline: none;
+
+}
+
+#searchbar:focus {
+  background-color: #e9f4ff;
+  border: 2px solid #cce4fd;
+}
+
+#bell {
+  float: right;
+  margin-right: 1%;
+}
+
+#Personalprofile {
+  float: left;
+  background-color: #CCE4FD;
+  height: 85%;
+  width: 35%;
+  padding: 1%;
+  border-radius: 97px;
+  margin-left: 40px;
+  text-align: left;
+}
+
+#PersonalprofileHead {
+  text-align: center;
+  color: rgb(3, 18, 22);
+  font-size: 30px;
+  text-decoration-style: solid;
+  font-family: Trebuchet MS, Helvetica, sans-serif;
+}
+
+#personalExpand, #collegeExpand {
+  position: absolute;
+  transition: 0.25s;
+}
+#personalExpand:hover {
+  width: 80px;
+}
+
+
+#Collegeprofile {
+  float: right;
+  background-color: #CCE4FD;
+  height: 85%;
+  width: 59%;
+  padding: 1%;
+  border-radius: 97px;
+  margin-right: 40px;
+  text-align: left;
+}
+
+#CollegeprofileHead {
+  text-align: center;
+  color: rgb(3, 18, 22);
+  font-size: 30px;
+  text-decoration-style: solid;
+  font-family: Trebuchet MS, Helvetica, sans-serif;
+}
+
+#collegeExpand:hover {
+  width: 100px;
+}
