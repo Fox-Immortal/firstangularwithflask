@@ -1,4 +1,4 @@
-angular.module('myApp').factory('AuthService',
+myApp.factory('AuthService',
   ['$q', '$timeout', '$http',
     function ($q, $timeout, $http) {      
       var user_in = false;
@@ -15,6 +15,7 @@ angular.module('myApp').factory('AuthService',
       }
 
       function login(email, password) {
+        alert("testing this out");
         // create a new instance of deferred
         var deferred = $q.defer();
         loggedOut = false;
@@ -35,7 +36,7 @@ angular.module('myApp').factory('AuthService',
           });
 
         // return promise object
-        return deferred.promise;
+        // return deferred.promise;
       }
 
       function logout() {
@@ -63,9 +64,9 @@ angular.module('myApp').factory('AuthService',
         var deferred = $q.defer();
 
         // send a post request to the server
-        $http.post('/api/register', { email: email, password: password })
+        $http.post('/api/register', { email: email, password: password})
           .then((response) => {
-            if (response.status === 200 && response.data.result) {
+            if (response.status === 200 && response.data.result == true) {
               deferred.resolve();
             }
           }, (response) => {
