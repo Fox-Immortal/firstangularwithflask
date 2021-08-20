@@ -1,31 +1,28 @@
-myApp.controller('loginController', ['$scope', '$location', function ($scope, $location) {
+myApp.controller('loginController', ['$scope', '$location', 'AuthService', function ($scope, $location, AuthService) {
+      $scope.loginForm = {};
 
       $scope.login = function () {
-            // initial values
             $scope.error = false;
             $scope.disabled = true;
-            // TODO: Link it with the api using Auth when done
-            // handle success
-            // alert($scope.loginForm.email);
-            //     $scope.disabled = false;
-            //     $scope.loginForm = {};
-            
-            
-            if($scope.loginForm.email == undefined) {
-                  $scope.error = true;
-                  $scope.errorMessage = "Please don't leave any field empty!";
-            }
-            else if($scope.loginForm.email == 'fox' || $scope.loginForm.email == 'fuad') {
-                  $location.path('/main');
-            } 
-            else {
-                  $scope.error = true;
-                  $scope.errorMessage = "Invalid username and/or password";
-            }
+
+            if ($scope.loginForm.email == undefined)
+                  $scope.error = true, $scope.errorMessage = "Please don't leave any field empty!";
+            else
+                  AuthService.register($scope.loginForm.email, $scope.loginForm.passowrd)
+                        .then(() => {
+                              $location.path('/main');
+                        }, () => {
+                              $scope.error = true;
+                              $scope.errorMessage = "Invalid username and/or password";
+                        });
             $scope.disabled = false;
             $scope.loginForm = {};
       }
 }]);
+
+myApp.controller('mainController', ['$scope', function ($scope) {
+
+}])
 
 myApp.controller('AppCtrl', ['$scope', '$interval', function ($scope, $interval) {
       $scope.number = 0;
