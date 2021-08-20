@@ -44,6 +44,12 @@
   text-align: left;
 }
 
+#bio {
+  text-align: center;
+  margin: 18px;
+  color: rgb(0, 3, 3);
+}
+
 #personalProfileHead {
   text-align: center;
   color: rgb(3, 18, 22);
@@ -73,6 +79,16 @@
   text-align: left;
 }
 
+#C-info {
+  text-align: center;
+  margin: 10px;
+  float: left;
+  font-size: large;
+  line-height: 200%;
+  font-family: Georgia, serif;
+  font-weight: 750;
+}
+
 #collegeProfileHead {
   text-align: center;
   color: rgb(3, 18, 22);
@@ -92,6 +108,22 @@
   width: 60% !important;
   height: 100% !important;
   float: right;
+}
+
+#CurrentCourses {
+  text-align: left;
+  margin: 7px;
+  float: right;
+  line-height: 200%;
+  font-family: Georgia, serif;
+  font-weight: 550;
+}
+
+#CC-materials,
+#member-of {
+  margin-top: 30px;
+  margin-left: 15px;
+  line-height: 300%;
 }
 
 #userScroller {
