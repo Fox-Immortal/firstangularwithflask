@@ -64,7 +64,6 @@ myApp.controller("mainController", [
             Chart.defaults.global.tooltips.titleFontSize = 30;
             Chart.defaults.global.tooltips.bodyFontSize = 30;
             Chart.defaults.global.tooltips.footerFontSize = 30;
-            console.log(Chart.defaults.global);
             $scope.onClick = function (points, evt) {
                   console.log(points, evt);
             };
@@ -105,7 +104,8 @@ myApp.controller("mainController", [
             var index = 0;
             $scope.students = [];
             setInterval(() => {
-                  $scope.students.push(localStudents[index++]);
+                  if (index < localStudents.length)
+                        $scope.students.push(localStudents[index++]);
                   // $scope.students = localStudents;
                   $scope.$apply();
             }, 15);

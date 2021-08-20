@@ -2,17 +2,17 @@
     <img id="logo" src="static/assets/stdlink.png" alt="logo" width="200">
 
     <img id="profilePicture" src="static/assets/graduate.png" alt="profilePicture" height="70" width="100">
-
-    <input id="searchbar" type="text" placeholder="Search…" ng-model="search.$">
+    <input ng-submit="alert('submited')" id="searchbar" type="text" placeholder="Search…" ng-model="search">
 
 </div>
 
 
 
-
-<div id="userScroller" class="container">
-    <div class="container" ng-repeat="student in students  | filter:search:strict" style="width: 100%; height: 170px;">
-        <div id="user" class="row">
+<!-- {{search != undefied && search != ''}} -->
+<div ng-if="search != undefied && search != ''" class="container userScroller">
+    <div class="container users" ng-repeat="student in students  | filter:search:strict"
+        style="width: 100%; height: 170px;">
+        <div class="row user">
             <div class="row" id="userDetails">
                 <div id="userImage">
                 </div>
@@ -28,16 +28,28 @@
             </div>
         </div>
     </div>
+    <div ng-if="(students | filter:search).length == 0" style="
+    background-color: #cce4fd;
+    padding: 40px;
+    border-radius: 97px;
+    margin: 150px;
+    text-align: center;
+    ">
+        There no students with this name/skill :p Try something else please
+    </div>
 </div>
 
-<!-- <div id="personalProfile">   
+
+
+
+<div class="profile" id="personalProfile" ng-if="search == undefied || search == ''">
     <img id="personalExpand" src="static/assets/vector 10.svg" alt="expand" width="65">
     <p id="personalProfileHead">Personal profile</p>
     <div style="padding: 3%">
         <p>
-            <ul>
-                <li>Name:</li>
-                <li>Age:</li>
+        <ul>
+            <li>Name:</li>
+            <li>Age:</li>
             <li>Major:</li>
             <li>StudentID:</li>
         </ul>
@@ -45,7 +57,7 @@
     </div>
 
 </div>
-<div id="collegeProfile">
+<div class="profile" id="collegeProfile" ng-if="search == undefied || search == ''">
     <img id="collegeExpand" src="static/assets/vector 10.svg" alt="expand" width="80">
     <p id="collegeProfileHead">College profile</p>
     <div style="padding: 3%">
@@ -59,11 +71,15 @@
         </p>
     </div>
     <div>
-        <canvas id="line" class="chart chart-line" chart-data="data" chart-colors="colors" chart-labels="labels"
+
+    </div>
+</div>
+
+
+
+
+
+<!-- <canvas id="line" class="chart chart-line" chart-data="data" chart-colors="colors" chart-labels="labels"
             chart-series="series" chart-options="options" chart-dataset-override="datasetOverride"
             chart-click="onClick">
-        </canvas>
-    </div>
-</div> -->
-
-</div>
+        </canvas> -->

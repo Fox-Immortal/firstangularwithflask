@@ -94,7 +94,7 @@
   float: right;
 }
 
-#userScroller {
+.userScroller {
   overflow: auto;
   width: 100%;
   height: 86%;
@@ -121,7 +121,7 @@
   opacity: 1;
 }
 
-#user {
+.user {
   background-color: #cce4fd;
   border-radius: 97px;
   padding: 10px;
@@ -129,36 +129,6 @@
   border: white 4px solid;
 }
 
-.ng-enter {
-  -webkit-transition: 0.8s;
-  transition: 0.8s;
-  margin-left: 100%;
-}
-
-.ng-enter-active {
-  margin-left: 0;
-}
-
-.ng-leave {
-  -webkit-transition: 0.8s;
-  transition: 0.8s;
-  margin-left: 0;
-}
-
-.ng-leave-active {
-  margin-left: 100%;
-}
-
-.ng-move {
-  -webkit-transition: 0.8s;
-  transition: 0.8s;
-
-  background: gold;
-}
-
-.ng-move-active {
-  background: #fff;
-}
 #userDetails {
   width: 40%;
   direction: ltr;
@@ -196,6 +166,72 @@
   opacity: 0.7;
   border-radius: 97px;
 }
-.message.ng-enter-prepare {
+
+/* userScroller animations */
+.userScroller.ng-enter {
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  opacity: 0;
+}
+
+.userScroller.ng-enter-active {
+  opacity: 1;
+}
+
+.userScroller.ng-leave {
+  -webkit-transition: 0s;
+  transition: 0s;
+  opacity: 1;
+}
+
+.userScroller.ng-leave-active {
+  opacity: 0;
+}
+
+/* user animations */
+
+.users.ng-enter {
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  margin-left: 100%;
+}
+
+.users.ng-enter-active {
+  margin-left: 0;
+}
+
+.users.ng-leave {
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  margin-left: 0;
+}
+
+.users.ng-leave-active {
+  margin-left: 100%;
+}
+
+.users.ng-hide {
+  transition: 0.5s linear all;
+  margin-left: 0%;
+}
+
+/* prfiles animations */
+.profile.ng-enter {
+  -webkit-transition: 1.2s;
+  transition: 1.2s;
+  opacity: 0;
+}
+
+.profile.ng-enter-active {
+  opacity: 1;
+}
+
+.profile.ng-leave {
+  -webkit-transition: 0s;
+  transition: 0s;
+  opacity: 1;
+}
+
+.profile.ng-leave-active {
   opacity: 0;
 }
