@@ -33,7 +33,7 @@
   margin-right: 1%;
 }
 
-#Personalprofile {
+#personalProfile {
   float: left;
   background-color: #cce4fd;
   height: 85%;
@@ -44,7 +44,7 @@
   text-align: left;
 }
 
-#PersonalprofileHead {
+#personalProfileHead {
   text-align: center;
   color: rgb(3, 18, 22);
   font-size: 30px;
@@ -57,11 +57,12 @@
   position: absolute;
   transition: 0.25s;
 }
+
 #personalExpand:hover {
   width: 80px;
 }
 
-#Collegeprofile {
+#collegeProfile {
   float: right;
   background-color: #cce4fd;
   height: 85%;
@@ -72,7 +73,7 @@
   text-align: left;
 }
 
-#CollegeprofileHead {
+#collegeProfileHead {
   text-align: center;
   color: rgb(3, 18, 22);
   font-size: 30px;
@@ -84,11 +85,117 @@
   width: 100px;
 }
 
-#Collegeprofile #line {
+#collegeProfile #line {
   padding: 30px;
-  background-color: #F0F7FF;
+  background-color: #f0f7ff;
   border-radius: 30px;
   width: 60% !important;
   height: 100% !important;
   float: right;
+}
+
+#userScroller {
+  overflow: auto;
+  width: 100%;
+  height: 86%;
+  border-radius: 97px;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #6eb1f0;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #309bff;
+  opacity: 1;
+}
+
+#user {
+  background-color: #cce4fd;
+  border-radius: 97px;
+  padding: 10px;
+  align-items: center;
+  border: white 4px solid;
+}
+
+.ng-enter {
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  margin-left: 100%;
+}
+
+.ng-enter-active {
+  margin-left: 0;
+}
+
+.ng-leave {
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  margin-left: 0;
+}
+
+.ng-leave-active {
+  margin-left: 100%;
+}
+
+.ng-move {
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+
+  background: gold;
+}
+
+.ng-move-active {
+  background: #fff;
+}
+#userDetails {
+  width: 40%;
+  direction: ltr;
+  align-items: center;
+}
+
+#userImage {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: #228beb;
+  opacity: 0.7;
+  margin: 20px;
+}
+
+#userSkill {
+  width: 60%;
+  direction: rtl;
+  align-items: center;
+}
+
+#skillLevelContainer {
+  width: 80%;
+  height: 80px;
+  border-radius: 97px;
+  border: white 3px solid;
+  direction: ltr;
+  margin: 10px;
+}
+
+#skillLevel {
+  width: 100%;
+  height: 74px;
+  background-color: #228beb;
+  opacity: 0.7;
+  border-radius: 97px;
+}
+.message.ng-enter-prepare {
+  opacity: 0;
 }

@@ -43,10 +43,27 @@ myApp.controller('mainController', ['$scope', function ($scope) {
       Chart.defaults.global.tooltips.titleFontSize = 30;
       Chart.defaults.global.tooltips.bodyFontSize = 30;
       Chart.defaults.global.tooltips.footerFontSize = 30;
+
       console.log(Chart.defaults.global);
       $scope.onClick = function (points, evt) {
             console.log(points, evt);
       };
+
+      $scope.students = [{ name: 'John', id: '31801002099', skill: 'ios' },];
+      localStudents = [
+            { name: 'John', id: '31801002099', skill: 'ios' },
+            { name: 'Mary', id: '31801002098', skill: 'angularJS' },
+            { name: 'Mike', id: '31601002099', skill: 'reactJs' },
+            { name: 'Adam', id: '30301013109', skill: 'flask' },
+            { name: 'Julie', id: '20401213105', skill: 'flutter' },
+            { name: 'Juliette', id: '20301213105', skill: 'swift' },
+            { name: 'Juliette', id: '20301213105', skill: 'swift' },
+            { name: 'Juliette', id: '20301213105', skill: 'swift' },
+            { name: 'Juliette', id: '20301213105', skill: 'swift' }];
+      setInterval(function () {
+            // $scope.students.push(localStudents[0]);
+            // alert("added");
+      }, 1000);
 
       $scope.colors = ['#ff6384', '#EBD725', '#228BEB', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'];
 
@@ -63,7 +80,7 @@ myApp.controller('mainController', ['$scope', function ($scope) {
       style = {
             borderWidth: 1,
             borderColor: 'rgpa(0, 0, 0, 0)',
-            pointBorderWidth: 0,    
+            pointBorderWidth: 0,
             pointRadius: 0,
             pointHitRadius: 0,
       }
@@ -73,8 +90,25 @@ myApp.controller('mainController', ['$scope', function ($scope) {
             style,
             style,
       ];
+      localStudents = [
+            { name: 'John', id: '31801002099', skill: 'Ios' },
+            { name: 'Mary', id: '31801002098', skill: 'AngularJS' },
+            { name: 'Mike', id: '31601002099', skill: 'ReactJs' },
+            { name: 'Adam', id: '30301013109', skill: 'Flask' },
+            { name: 'Julie', id: '20401213105', skill: 'Flutter' },
+            { name: 'Juliette', id: '20301213105', skill: 'Swift' },
+            { name: 'Juliette', id: '20301213105', skill: 'Swift' },
+            { name: 'Juliette', id: '20301213105', skill: 'Swift' },
+            { name: 'Juliette', id: '20301213105', skill: 'Swift' }];
+      var index = 0;
+      $scope.students = [];
+      setInterval(() => {
+            $scope.students.push(localStudents[index++]);
+            // $scope.students = localStudents;
+            $scope.$apply();
+      }, 15);
+      $scope.searching = false;
 }])
-
 
 
 
@@ -89,3 +123,5 @@ myApp.controller('AppCtrl', ['$scope', '$interval', function ($scope, $interval)
             return colors[number % colors.length];
       };
 }]);
+
+
