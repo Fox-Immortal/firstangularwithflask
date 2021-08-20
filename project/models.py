@@ -24,13 +24,15 @@ class Skill(db.Model) :
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     phone_number = db.Column(db.String(15))
+    major = db.Column(db.String(25))
+    student_id = db.Column(db.Integer)
     name = db.Column(db.String(30), unique=True, nullable=False)
     skills = db.relationship('Skill', backref='skilled_guy', lazy=True)
     clubs = db.relationship('User_Club', backref='clubsOfMember', lazy=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
     password = db.Column(db.String(30), nullable=False)
-    bio = db.Column(db.String(2000), unique=False, nullable=True)
+    bio = db.Column(db.String(500), unique=False, nullable=True)
     def get_reset_token(self, expires_sec=1800):
         s = Serializer(app.config['SECRET_KEY'], expires_sec)
         return s.dumps({'user_id': self.id}).decode('utf-8')

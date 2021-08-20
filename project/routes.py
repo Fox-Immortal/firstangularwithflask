@@ -6,7 +6,6 @@ from project.models import *
 from flask_mail import Message
 from project import db, app, bcrypt, mail
 from flask_login import login_user, current_user, logout_user, login_required
-from flask_restful import Api, Resource, reqparse, abort, fields, marshal_with
 from flask import render_template, flash, redirect, url_for, request, jsonify, session
 
 
@@ -116,3 +115,34 @@ def reset_token(token):
         flash('Your password has been updated! You are now able to log in', 'success')
         return redirect(url_for('login'))
     return render_template('reset_token.html', title='Reset Password', form=form)
+
+
+@app.route("/api/update_bio", methods=['GET', 'POST'])
+@login_required
+def update_bio():
+    json_data = request.json
+    user = current_user
+    user.bio = json_data['bio']
+    db.session.commit()
+    status = 'Bio updated Successfully'
+    return jsonify({'result': status})
+
+@app.route("/account", methods=['GET', 'POST'])
+@login_required
+def account():
+    form = UpdateAccountForm()
+    json_data = request.json
+    if form.validate_on_submit():
+        if form.picture.data:
+            picture_file = save_picture(form.picture.data)
+            current_user.image_file = picture_file
+        current_user.name = json_data['name']
+        current_user.email = json_data['email']
+        db.session.commit()
+        flash('Your account has been updated!', 'success')
+        return redirect(url_for('account'))
+    elif request.method == 'GET':
+        json_data['name'] = current_user.name
+        json_data['email'] = current_user.email
+    image_file = url_for('static/assets', filename='profile_pics/' + current_user.image_file)
+    return render_template('account.html', title='Account', image_file=image_file, form = form)
