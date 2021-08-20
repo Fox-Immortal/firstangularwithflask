@@ -81,7 +81,7 @@ class Search_Api_Club(Resource):
         if not result:
             abort(404, message="Could not find a Club with that name...")
         return result
-
+        
 class Search_Api_Skill(Resource):
     @marshal_with(skill_resource_fields)
     def get(self, name):
@@ -90,7 +90,6 @@ class Search_Api_Skill(Resource):
         if not result:
             abort(404, message="Could not find a Skill with that name...")
         return result
-
 
 
 api.add_resource(User_Api, "/api/user/<int:user_id>")

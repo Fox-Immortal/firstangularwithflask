@@ -9,8 +9,8 @@ from flask_login import login_user, current_user, logout_user, login_required
 from flask import render_template, flash, redirect, url_for, request, jsonify, session
 
 
-
 BASE = "127.0.0.1/5000"
+
 
 @app.route("/main")
 @app.route("/", methods=['GET', 'POST'])
@@ -29,10 +29,11 @@ def login():
         session['logged_in'] = True
         status = True
         login_user(user)
-    else :
+    else:
         flash('Login Unsuccessful. Please check E-mail and password', 'danger')
         status = False
     return jsonify({'result': status})
+
 
 @app.route('/api/register', methods=['GET', 'POST'])
 def register():
@@ -53,11 +54,13 @@ def register():
     db.session.close()
     return jsonify({'result': status})
 
+
 @app.route('/api/logout')
 def logout():
     logout_user()
     session.pop('logged_in', None)
     return jsonify({'result': 'success'})
+
 
 @app.route('/api/status')
 def status():
@@ -65,18 +68,21 @@ def status():
         if session['logged_in']:
             return jsonify({'result': True})
         else:
-            return jsonify({'result' : False})
+            return jsonify({'result': False})
     else:
         return jsonify({'result': False})
 
+
 def send_reset_email(user):
     token = user.get_reset_token()
-    msg = Message('Password Reset Request', sender='Student-Link@outlook.com', recipients=[user.email])
+    msg = Message('Password Reset Request',
+                  sender='Student-Link@outlook.com', recipients=[user.email])
     msg.body = f'''To reset your password, visit the following link:
     {url_for('reset_token', token = token, _external = True)}
     If you did not make this request then simply ignore this email and no change has been made
     '''
     mail.send(msg)
+
 
 @app.route("/api/reset_password", methods=['GET', 'POST'])
 def reset_request():
@@ -88,33 +94,33 @@ def reset_request():
         return redirect(url_for('login'))
     return render_template('reset_request.html', title='Reset Password', form=form)
 
+
 @app.route("/api/save_picture/", methods=['GET', 'POST'])
 @login_required
 def save_picture(form_picture):
     random_hex = secrets.token_hex(8)
     _, f_ext = os.path.splitext(form_picture.filename)
     picture_fn = random_hex + f_ext
-    picture_path = os.path.join(app.root_path, 'static/assets/profile_pics', picture_fn)
+    picture_path = os.path.join(
+        app.root_path, 'static/assets/profile_pics', picture_fn)
     output_size = (125, 125)
     newImage = Image.open(form_picture)
     newImage.thumbnail(output_size)
     newImage.save(picture_path)
-    return newImage
+    return picture_path
+
 
 @app.route("/api/reset_password/<token>", methods=['GET', 'POST'])
 def reset_token(token):
+    json_data = request.json
     user = User.verify_reset_token(token)
     if user is None:
-        flash('That is an invalid or expired token', 'warning')
-        return redirect(url_for('reset_request'))
-    form = ResetPasswordForm()
-    if form.validate_on_submit():
-        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
-        user.password = hashed_password
-        db.session.commit()
-        flash('Your password has been updated! You are now able to log in', 'success')
-        return redirect(url_for('login'))
-    return render_template('reset_token.html', title='Reset Password', form=form)
+        return jsonify({'result' : 'failed'})
+    hashed_password = bcrypt.generate_password_hash(
+        json_data['password']).decode('utf-8')
+    user.password = hashed_password
+    db.session.commit()
+    return jsonify({'result' : 'success'})
 
 
 @app.route("/api/update_bio", methods=['GET', 'POST'])
@@ -127,15 +133,14 @@ def update_bio():
     status = 'Bio updated Successfully'
     return jsonify({'result': status})
 
-@app.route("/account", methods=['GET', 'POST'])
+
+@app.route("/api/update_account", methods=['GET', 'POST'])
 @login_required
-def account():
-    form = UpdateAccountForm()
+def update_account():
     json_data = request.json
-    if form.validate_on_submit():
-        if form.picture.data:
-            picture_file = save_picture(form.picture.data)
-            current_user.image_file = picture_file
+    if request.method == 'POST':
+        if json_data['image_file']:
+            current_user.image_file = save_picture(json_data['image_file'])
         current_user.name = json_data['name']
         current_user.email = json_data['email']
         db.session.commit()
@@ -144,5 +149,5 @@ def account():
     elif request.method == 'GET':
         json_data['name'] = current_user.name
         json_data['email'] = current_user.email
-    image_file = url_for('static/assets', filename='profile_pics/' + current_user.image_file)
-    return render_template('account.html', title='Account', image_file=image_file, form = form)
+        json_data['image_file'] = current_user.image_file
+    return jsonify({'result': 'success'})
