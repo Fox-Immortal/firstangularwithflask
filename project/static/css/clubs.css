@@ -1,0 +1,34 @@
+#nav-bar {
+  padding: 1%;
+}
+
+#logo {
+  margin-left: 3%;
+}
+
+#profilePicture {
+  float: right;
+  margin-right: 3%;
+}
+
+#searchbar {
+  background-color: #cce4fd;
+  height: 50px;
+  width: 60%;
+  margin-left: 4.5%;
+  border: 0;
+  border-radius: 97px;
+  text-align: center;
+  transition: 0.5s;
+  outline: none;
+}
+
+#searchbar:focus {
+  background-color: #e9f4ff;
+  border: 2px solid #cce4fd;
+}
+
+#bell {
+  float: right;
+  margin-right: 1%;
+}

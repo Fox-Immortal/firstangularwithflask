@@ -93,6 +93,7 @@ myApp.controller("mainController", [
             ];
             localStudents = [
                   { name: 'John', id: '31801002099', skill: 'Ios' },
+                  { name: 'Jeff', id: '31801002059', skill: 'JEFF' },
                   { name: 'Mary', id: '31801002098', skill: 'AngularJS' },
                   { name: 'Mike', id: '31601002099', skill: 'ReactJs' },
                   { name: 'Adam', id: '30301013109', skill: 'Flask' },
@@ -104,10 +105,11 @@ myApp.controller("mainController", [
             var index = 0;
             $scope.students = [];
             setInterval(() => {
-                  if (index < localStudents.length)
+                  if (index < localStudents.length) {
                         $scope.students.push(localStudents[index++]);
-                  // $scope.students = localStudents;
-                  $scope.$apply();
+                        // $scope.students = localStudents;
+                        $scope.$apply();
+                  }
             }, 15);
             $scope.searching = false;
 
