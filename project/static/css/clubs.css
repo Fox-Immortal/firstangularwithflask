@@ -32,3 +32,42 @@
   float: right;
   margin-right: 1%;
 }
+
+.clubs-row {
+  position: absolute;
+  width: 23%;
+  height: 41%;
+  margin: 2.5% 2% 2% 1.5%;
+
+  background: #e6e1e1;
+  border-radius: 64px;
+}
+
+#Club1 {
+  text-align: center;
+  margin-top: 40%;
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
