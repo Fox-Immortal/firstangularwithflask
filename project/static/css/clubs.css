@@ -71,3 +71,24 @@
   opacity: 1;
   right: 0;
 }
+
+#_club {
+  background-color: #cce4fd;
+  height: 85%;
+  width: 95%;
+  padding: 1%;
+  border-radius: 97px;
+  margin: 0 2% 2% 2%;
+}
+
+#clubinfo {
+  margin: 1.5% 2%;
+  text-align: left;
+  width: 60%;
+}
+
+#members {
+  width: 30%;
+  height: 100%;
+  text-align: center;
+}
