@@ -34,19 +34,34 @@
 }
 
 .clubs-row {
-  position: absolute;
-  width: 23%;
-  height: 41%;
-  margin: 2.5% 2% 2% 1.5%;
-
-  background: #e6e1e1;
-  border-radius: 64px;
 }
 
-#Club1 {
+#club {
+  width: 300px;
+  height: 500px;
+  background: #e5e1e1;
+  border-radius: 50px;
   text-align: center;
-  margin-top: 40%;
 }
+
+#teamPicture {
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+}
+.button {
+  text-align: center;
+  background-color: #68b2ff;
+  border-radius: 97px;
+  width: 80%;
+  box-shadow: none;
+  outline: none !important;
+}
+.button:focus {
+  border-radius: 97px;
+  outline: none !important;
+  box-shadow: none;
+}
+
 .button span {
   cursor: pointer;
   display: inline-block;
@@ -91,4 +106,18 @@
   width: 30%;
   height: 100%;
   text-align: center;
+}
+
+.verticalLine {
+  border-left: 1.5px solid rgb(0, 2, 0);
+  height: 500px;
+  margin-left: 45px;
+  margin-top: 4%;
+}
+
+.clubs {
+  margin: auto;
+  overflow: scroll;
+  height: 88%;
+  border-radius: 97px;
 }

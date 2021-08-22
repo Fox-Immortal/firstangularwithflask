@@ -1,111 +1,76 @@
 <div id="nav-bar">
-  <img id="logo" src="static/assets/stdlink.png" alt="logo" width="200" />
+    <img id="logo" src="static/assets/stdlink.png" alt="logo" width="200" />
 
-  <img
-    id="profilePicture"
-    src="static/assets/user.jpg"
-    alt="profilePicture"
-    height="80"
-    width="80"
-    style="border-radius: 50%"
-  />
-  <input
-    ng-submit="alert('submited')"
-    id="searchbar"
-    type="text"
-    placeholder="Search…"
-    ng-model="search"
-  />
+    <img id="profilePicture" src="static/assets/user.jpg" alt="profilePicture" height="80" width="80"
+        style="border-radius: 50%" />
+    <input id="searchbar" type="text" placeholder="Search…" ng-model="search" />
 </div>
 
 <!-- you should do the clubs here  -->
-<!-- <div class="clubs-row">
-  <div id="Club1">
-    <img
-      src="static/assests/itgeeks.jpg"
-      alt="team picture"
-      height="50%"
-      width="100%"
-    />
+<!-- TODO: make this button at the bottom of the club card -->
+<!-- TODO: add shadows so its looks like cards -->
+<!-- TODO: make the cards vertically and horizontally centered -->
+<div class="clubs">
+    <div class="row">
+        <div class="col-sm-3" ng-repeat="item in items">
+            <div id="club">
+                <img id="teamPicture" src="static/assets/itgeeks.jpg" alt="team picture" height="50px" width="100px" />
+                <h3>IT Geeks Club</h3>
+                <p>Coding & Technology | 20 members | know more</p>
 
-    <h3>IT Geeks Club</h3>
-    <p>Coding & Technology | 20 members | know more</p>
-    <button
-      class="button"
-      style="
-        margin-bottom: 1.5%;
-        text-align: center;
-        background-color: #68B2FF;
-cadetblue;
-        border-radius: 97px;
-        width: 80%;
-      "
-    >
-      <span> Ask to join </span>
-    </button>
-  </div>
-</div> -->
+                <button class="button">
+                    <span> Ask to join </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 <!-- I WILL START THE CLUB PAGE FROM HERE -->
-<div id="_club">
-  <div class="row" style="padding: 0 3% 3% 3%">
-    <div id="clubinfo">
-      <h2>IT Geeks Club</h2>
-      <p>
-        We cover a wide range of MedTech topics to explore any interest:
-        Regenerative Medicine, Gene Therapy, AI and Machine Learning, Corporate
-        MedTech, Biotechnology, Biomedical Engineering, Developing your own
-        start-up, NHS & MedTech, Neuroscience, Application Development How do we
-        do it? Cutting-edge talks: Hear from researchers at the top of their
-        field, CEOs, strategy consultants and others changing the world of
-        MedTech Networking: Enjoy our links with experts at Deloitte, KPMG, PwC,
-        Babylon Health, IBM and others. We use these links to help you build
-        your own network with MedTech companies, by giving you access to the
-        knowledge, contacts and latest job opportunities you need to kickstart
-        your career in MedTech MedTech Portal: Use our new online platform to
-        keep up to date with the latest MedTech news or start your learning from
-        the ground up using our articles, videos and talks. As a MedTech member,
-        you will also have the opportunity to start internships with our partner
-        start-up companies! Conferences: Network with NHS executives,
-        entrepreneurs, doctors, software engineers and others as we introduce
-        you to pioneers and world experts from industry and academia to discuss
-        how they are revolutionising medicine at our AI in Medicine Conference,
-        the largest conference at UCL. Coding workshops: For complete beginners
-        or Machine Learning experts, we run regular project-based programming
-        workshops in conjunction with organisations like IBM - so you have the
-        skills to develop apps, develop AI tools and much, much more.
-        Hackathons: Join in with over 100 other students, graduates and work
-        professionals to create an idea that will change the future of Medicine;
-        last year with mentors from Babylon Health and Entrepreneur First.
-      </p>
-    </div>
-    <div
-      style="
-        border-left: 1.5px solid rgb(0, 2, 0);
-        height: 500px;
-        margin-left: 45px;
-        margin-top: 4%;
-      "
-    ></div>
+<!-- <div id="_club">
+    <div class="row" style="padding: 0 3% 3% 3%">
+        <div id="clubinfo">
+            <h2>IT Geeks Club</h2>
+            <p>
+                We cover a wide range of MedTech topics to explore any interest:
+                Regenerative Medicine, Gene Therapy, AI and Machine Learning, Corporate
+                MedTech, Biotechnology, Biomedical Engineering, Developing your own
+                start-up, NHS & MedTech, Neuroscience, Application Development How do we
+                do it? Cutting-edge talks: Hear from researchers at the top of their
+                field, CEOs, strategy consultants and others changing the world of
+                MedTech Networking: Enjoy our links with experts at Deloitte, KPMG, PwC,
+                Babylon Health, IBM and others. We use these links to help you build
+                your own network with MedTech companies, by giving you access to the
+                knowledge, contacts and latest job opportunities you need to kickstart
+                your career in MedTech MedTech Portal: Use our new online platform to
+                keep up to date with the latest MedTech news or start your learning from
+                the ground up using our articles, videos and talks. As a MedTech member,
+                you will also have the opportunity to start internships with our partner
+                start-up companies! Conferences: Network with NHS executives,
+                entrepreneurs, doctors, software engineers and others as we introduce
+                you to pioneers and world experts from industry and academia to discuss
+                how they are revolutionising medicine at our AI in Medicine Conference,
+                the largest conference at UCL. Coding workshops: For complete beginners
+                or Machine Learning experts, we run regular project-based programming
+                workshops in conjunction with organisations like IBM - so you have the
+                skills to develop apps, develop AI tools and much, much more.
+                Hackathons: Join in with over 100 other students, graduates and work
+                professionals to create an idea that will change the future of Medicine;
+                last year with mentors from Babylon Health and Entrepreneur First.
+            </p>
+        </div>
+        <div class="verticalLine"></div>
+        <div id="members">
+            <h3>Members</h3>
+            LETS ADD THE MEMBERS
 
-    <div id="members">
-      <h3>Members</h3>
-      LETS ADD THE MEMBERS
-
-      <button
-        class="button"
-        style="
-        margin-bottom: .25%;
-        text-align: center;
-        background-color: #68B2FF;
-cadetblue;
-        border-radius: 97px;
-        width: 80%;
-        margin-top: 100%;
-      "
-      >
-        <span> Ask to join </span>
-      </button>
+            <button class="button ask">
+                <span> Ask to join </span>
+            </button>
+        </div>
     </div>
-  </div>
-</div>
+</div> -->
