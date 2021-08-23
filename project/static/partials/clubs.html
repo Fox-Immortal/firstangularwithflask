@@ -1,34 +1,40 @@
 <div id="nav-bar">
-    <img id="logo" src="static/assets/stdlink.png" alt="logo" width="200" />
+  <img id="logo" src="static/assets/stdlink.png" alt="logo" width="200" />
 
-    <img id="profilePicture" src="static/assets/user.jpg" alt="profilePicture" height="80" width="80"
-        style="border-radius: 50%" />
-    <input id="searchbar" type="text" placeholder="Search…" ng-model="search" />
+  <img
+    id="profilePicture"
+    src="static/assets/user.jpg"
+    alt="profilePicture"
+    height="80"
+    width="80"
+    style="border-radius: 50%"
+  />
+  <input id="searchbar" type="text" placeholder="Search…" ng-model="search" />
 </div>
 
-<!-- you should do the clubs here  -->
 <!-- TODO: make this button at the bottom of the club card -->
 <!-- TODO: add shadows so its looks like cards -->
 <!-- TODO: make the cards vertically and horizontally centered -->
 <div class="clubs">
-    <div class="row">
-        <div class="col-sm-3" ng-repeat="item in items">
-            <div id="club">
-                <img id="teamPicture" src="static/assets/itgeeks.jpg" alt="team picture" height="50px" width="100px" />
-                <h3>IT Geeks Club</h3>
-                <p>Coding & Technology | 20 members | know more</p>
-
-                <button class="button">
-                    <span> Ask to join </span>
-                </button>
-            </div>
-        </div>
+  <div class="row">
+    <div class="col-sm-3" ng-repeat="item in items" style="padding: 0.5%">
+      <div id="club">
+        <img
+          id="teamPicture"
+          src="static/assets/itgeeks.jpg"
+          alt="team picture"
+          height="62%"
+          width="100%"
+        />
+        <h3>IT Geeks Club</h3>
+        <p>Coding & Technology | 20 members | know more</p>
+        <button class="button" style="margin-bottom: 4%; margin-top: 0%">
+          <span> Ask to join </span>
+        </button>
+      </div>
     </div>
+  </div>
 </div>
-
-
-
-
 
 <!-- I WILL START THE CLUB PAGE FROM HERE -->
 <!-- <div id="_club">

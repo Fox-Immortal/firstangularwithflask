@@ -33,15 +33,14 @@
   margin-right: 1%;
 }
 
-.clubs-row {
-}
-
 #club {
-  width: 300px;
-  height: 500px;
+  width: 90%;
+  height: 99%;
+
   background: #e5e1e1;
   border-radius: 50px;
   text-align: center;
+  font-size: small;
 }
 
 #teamPicture {
@@ -116,7 +115,7 @@
 }
 
 .clubs {
-  margin: auto;
+  margin: 1.5% 2%;
   overflow: scroll;
   height: 88%;
   border-radius: 97px;
