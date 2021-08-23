@@ -21,6 +21,11 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
       controller: 'clubsController',
       css: '/static/css/clubs.css',
     })
+    .when('/club', {
+      templateUrl: 'static/partials/club.html',
+      controller: 'clubController',
+      css: '/static/css/club.css',
+    })
     .otherwise({
       redirectTo: '/'
     });

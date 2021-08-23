@@ -150,8 +150,20 @@ myApp.controller("AppCtrl", [
 
 
 myApp.controller("clubsController", [
-      "$scope", function ($scope) {
-            $scope.items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
+      "$scope", "$location", function ($scope, $location) {
+            $scope.clubs = [];
+            for (let i = 0; i < 30; i++)
+                  $scope.clubs.push(i);
+            $scope.club = function gotoClub() {
+                  $location.path('/club');
+            }
       }
+]);
 
+myApp.controller("clubController", [
+      "$scope", function ($scope) {
+            $scope.members = [];
+            for (var i = 0; i < 30; i++)
+                  $scope.members.push(i);
+      }
 ]);

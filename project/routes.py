@@ -12,6 +12,7 @@ from flask_mail import Message
 BASE = "127.0.0.1/5000"
 
 @app.route("/main")
+@app.route("/club")
 @app.route("/", methods=['GET', 'POST'])
 def home():
     return render_template("index.html")
