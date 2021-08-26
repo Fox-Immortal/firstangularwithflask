@@ -33,20 +33,28 @@
   margin-right: 1%;
 }
 
-#club {
-  width: 90%;
-  height: 99%;
-
-  background: #e5e1e1;
-  border-radius: 50px;
-  text-align: center;
-  font-size: small;
+#_club {
+  background-color: #cce4fd;
+  height: 85%;
+  width: 95%;
+  padding: 1%;
+  border-radius: 97px;
+  margin: 0 2% 2% 2%;
 }
 
-#teamPicture {
-  border-top-right-radius: 50px;
-  border-top-left-radius: 50px;
+#clubinfo {
+  margin: 1.5% 2%;
+  text-align: left;
+  width: 60%;
 }
+
+.verticalLine {
+  border-left: 1.5px solid rgb(0, 2, 0);
+  height: 500px;
+  margin-left: 45px;
+  margin-top: 4%;
+}
+
 .button {
   text-align: center;
   background-color: #68b2ff;
@@ -85,11 +93,15 @@
   opacity: 1;
   right: 0;
 }
-
-.clubs {
-  margin: 0 0 1.5% 1.5%;
+#members {
+  width: 30%;
+  height: 50%;
+  padding: 30px;
+  text-align: center;
+}
+.membersPictures {
+  border-radius: 97px;
+  height: 700px;
   overflow-x: hidden;
   overflow-y: scroll;
-  height: 88%;
-  border-radius: 97px;
 }
