@@ -5,7 +5,7 @@
 <div class="formBackground" ng-submit="login()" ng-model="loginForm">
     <form class="box" method="post">
         <div ng-show="error" class="error"> {{errorMessage}} </div>
-        <input type="text"  placeholder="Username" ng-model="loginForm.email" autocomplete="off">
+        <input type="text" placeholder="Username" ng-model="loginForm.email" autocomplete="off">
         <input type="password" placeholder="Password" ng-model="loginForm.password" autocomplete="off">
         <input type="submit" value="Login">
     </form>
@@ -14,7 +14,7 @@
 <div class="formBackground2" ng-submit="register()" ng-model="registerForm">
     <form class="box" method="post" style="margin: 0;">
         <div ng-show="registerError" class="error"> {{registerErrorMessage}} </div>
-        <input type="text"  placeholder="Username" ng-model="registerForm.email" autocomplete="off">
+        <input type="text" placeholder="Username" ng-model="registerForm.email" autocomplete="off">
         <input type="password" placeholder="Password" ng-model="registerForm.password" autocomplete="off">
         <input type="submit" value="Register">
     </form>

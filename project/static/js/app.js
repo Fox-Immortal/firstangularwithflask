@@ -8,15 +8,15 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
       controller: 'loginController',
       css: '/static/css/login.css'
     })
-    // .when('/main', {
-    //   templateUrl: 'static/partials/main.html',
-    //   controller: 'mainController',
-    //   css: '/static/css/main.css'
-    // })
+    .when('/main', {
+      templateUrl: 'static/partials/main.html',
+      controller: 'mainController',
+      css: '/static/css/main.css'
+    })
     .when('/hello', {
       templateUrl: 'static/partials/hi.html'
     })
-    .when('/main', {
+    .when('/clubs', {
       templateUrl: 'static/partials/clubs.html',
       controller: 'clubsController',
       css: '/static/css/clubs.css',

@@ -58,15 +58,70 @@ myApp.controller("loginController", [
       },
 ]);
 
+
+myApp.filter('users', function () {
+      return function (students, search) {
+            searchStudents = [];
+            for (var i = 0; i < students.length; i++) {
+                  let keys = Object.keys(students[i]).map(function (key) {
+                        return key;
+                  });
+                  for (let j = 0; j < keys.length; j++)
+                        if (keys[j] == 'skills') {
+                              let skillKeys = Object.keys(students[i][keys[j]]).map(function (key) {
+                                    return key;
+                              });
+                              for (let k = 0; k < students[i]['skills'].length; k++) {
+                                    if (students[i]['skills'][k].name.toLowerCase().includes(search.toLowerCase()))
+                                          searchStudents.push(students[i]);
+                              }
+                        }
+                        else if (keys[j] != '$$hashKey' && students[i][keys[j]].toLowerCase().includes(search.toLowerCase()))
+                              searchStudents.push(students[i]);
+            }
+            return searchStudents;
+      }
+});
+
 myApp.controller("mainController", [
       "$scope",
       function ($scope) {
-            Chart.defaults.global.tooltips.titleFontSize = 30;
-            Chart.defaults.global.tooltips.bodyFontSize = 30;
-            Chart.defaults.global.tooltips.footerFontSize = 30;
+
+
+            localStudents = [
+                  { name: 'John', id: '31801002099', skills: [{ name: 'Ios', level: 90 }] },
+                  { name: 'Jeff', id: '31801002059', skills: [{ name: 'JEFF', level: 55 }] },
+                  { name: 'Mary', id: '31801002098', skills: [{ name: 'AngularJS', level: 67 }] },
+                  { name: 'Mike', id: '31601002099', skills: [{ name: 'ReactJs', level: 44 }] },
+                  { name: 'Adam', id: '30301013109', skills: [{ name: 'Flask', level: 13 }] },
+                  { name: 'Julie', id: '20401213105', skills: [{ name: 'Flutter', level: 15 }] },
+                  { name: 'Juliette', id: '20301213105', skills: [{ name: 'Swift', level: 100 }] },
+                  { name: 'Juliette', id: '20301213105', skills: [{ name: 'Swift', level: 91 }] },
+                  { name: 'Juliette', id: '20301213105', skills: [{ name: 'Swift', level: 95 }] },
+                  { name: 'Juliette', id: '20301213105', skills: [{ name: 'Swift', level: 63 }] },
+                  { name: 'Juliette', id: '20301213105', skills: [{ name: 'Swift', level: 49 }] },
+            ]
+
+            var index = 0;
+            $scope.students = [];
+            setInterval(() => {
+                  if (index < localStudents.length) {
+                        $scope.students.push(localStudents[index++]);
+                        // $scope.students = localStudents;
+                        $scope.$apply();
+                  }
+            }, 15);
+            $scope.searching = false;
+
+
+
+
+
+            // line chart
             $scope.onClick = function (points, evt) {
                   console.log(points, evt);
             };
+            $scope.labels = ["S1", "S2", "SS", "S3", "S4", "S5", "S6"];
 
             $scope.colors = [
                   "#ff6384",
@@ -91,31 +146,8 @@ myApp.controller("mainController", [
                   style,
                   style,
             ];
-            localStudents = [
-                  { name: 'John', id: '31801002099', skill: 'Ios' },
-                  { name: 'Jeff', id: '31801002059', skill: 'JEFF' },
-                  { name: 'Mary', id: '31801002098', skill: 'AngularJS' },
-                  { name: 'Mike', id: '31601002099', skill: 'ReactJs' },
-                  { name: 'Adam', id: '30301013109', skill: 'Flask' },
-                  { name: 'Julie', id: '20401213105', skill: 'Flutter' },
-                  { name: 'Juliette', id: '20301213105', skill: 'Swift' },
-                  { name: 'Juliette', id: '20301213105', skill: 'Swift' },
-                  { name: 'Juliette', id: '20301213105', skill: 'Swift' },
-                  { name: 'Juliette', id: '20301213105', skill: 'Swift' }];
-            var index = 0;
-            $scope.students = [];
-            setInterval(() => {
-                  if (index < localStudents.length) {
-                        $scope.students.push(localStudents[index++]);
-                        // $scope.students = localStudents;
-                        $scope.$apply();
-                  }
-            }, 15);
-            $scope.searching = false;
-
-
             $scope.data = [
-                  [25, 40, 60, 50, 35, 40, 80], //red
+                  [25, 40, 60, 50, 35, 40, 100], //red
                   [30, 60, 75, 60, 50, 40, 70], // yellow
                   [50, 30, 22, 30, 50, 80, 60], // blue
             ];
@@ -129,6 +161,25 @@ myApp.controller("mainController", [
             };
 
             $scope.datasetOverride = [style, style, style];
+
+            // radar chart
+            $scope.radarLabels = ["Typing", "Problem Solving", "Listening", "Business", "Coding", "Design", "Animation"];
+
+            $scope.radarData = [
+                  [30, 30, 35, 40, 50, 80, 85],
+                  [0, 0, 0, 0, 0, 0, 0],
+            ];
+
+            $scope.skillLevel = function (value) {
+                  return {
+                        "width": value + '%',
+                        "height": "74px",
+                        "background-color": "#228beb",
+                        "opacity": "0.7",
+                        "border-radius": "97px",
+                  };
+            }
+
       },
 ]);
 
