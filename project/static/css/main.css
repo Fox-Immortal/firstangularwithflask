@@ -73,7 +73,7 @@
   background-color: #cce4fd;
   height: 85%;
   width: 59%;
-  padding: 1%;
+  padding: 0.9%;
   border-radius: 97px;
   margin-right: 40px;
   text-align: left;
@@ -111,9 +111,9 @@
 
 #CC-materials,
 #member-of {
-  margin-top: 30px;
-  margin-left: 15px;
-  line-height: 300%;
+  margin-top: 25px;
+  margin-left: 12px;
+  line-height: 260%;
 }
 
 .userScroller {
